@@ -1,44 +1,54 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { LOCATIONS } from "@/data/locations";
+
 import SEOHead from "@/components/SEOHead";
 import ServiceLocationTemplate from "@/templates/ServiceLocationTemplate";
+
 import Content from "@/components/serviceBlocks/stukadoor/Content";
 import FAQ from "@/components/serviceBlocks/stukadoor/FAQ";
 import CTA from "@/components/serviceBlocks/stukadoor/CTA";
-import Breadcrumbs from "@/components/serviceBlocks/stukadoor/Breadcrumbs";
 import Schema from "@/components/serviceBlocks/stukadoor/Schema";
+
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Page = () => {
   const { citySlug } = useParams();
-  const location = LOCATIONS.find(loc => loc.slug === citySlug);
+  const location = LOCATIONS.find((loc) => loc.slug === citySlug);
 
   if (!location) {
     return <div>Not Found</div>;
   }
 
   const serviceName = "Stukadoor";
+  const serviceSlug = "stukadoor";
   const city = location.city;
 
-  const metaTitle = `Stukadoor in ${city}`;
-  const metaDescription = `NexStuc verzorgt professioneel stukadoorswerk in ${city} en omgeving.`;
+  const metaTitle = `Professioneel stukadoor in ${city} | NexStuc stucwerk specialist`;
+  const metaDescription = `Vakkundig stukadoorswerk in ${city} door NexStuc. Strakke wanden, plafonds en afwerking met garantie. Vraag een vrijblijvende offerte aan in ${city}.`;
 
   return (
     <>
       <SEOHead
         title={metaTitle}
         description={metaDescription}
-        canonical={`https://www.nexstuc.nl/stukadoor/${location.slug}`}
+        canonical={`https://www.nexstuc.nl/${serviceSlug}/${location.slug}`}
       />
 
       <ServiceLocationTemplate
         serviceName={serviceName}
         city={city}
+        breadcrumbs={
+          <Breadcrumbs
+            serviceSlug={serviceSlug}
+            serviceName={serviceName}
+            city={city}
+          />
+        }
         content={<Content serviceName={serviceName} city={city} />}
         faq={<FAQ serviceName={serviceName} city={city} />}
         cta={<CTA serviceName={serviceName} city={city} />}
-        breadcrumbs={<Breadcrumbs serviceName={serviceName} city={city} slug="stukadoor" />}
-        schema={<Schema serviceName={serviceName} city={city} slug="stukadoor" />}
+        schema={<Schema serviceName={serviceName} city={city} />}
       />
     </>
   );
