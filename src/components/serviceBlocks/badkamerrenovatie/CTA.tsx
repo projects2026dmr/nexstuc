@@ -2,14 +2,27 @@ import React from "react";
 
 const CTA = ({ serviceName, city }: { serviceName: string; city: string }) => {
   return (
-    <div className="bg-gradient-to-br from-brand-950 via-brand-900 to-dark-900 rounded-2xl p-8 sm:p-12 text-center">
-      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">{serviceName} nodig in {city}?</h2>
-      <p className="text-white/70 leading-relaxed max-w-xl mx-auto mb-8">Vraag een vrijblijvende offerte aan voor uw complete {serviceName.toLowerCase()} in {city}. Van ontwerp tot oplevering — wij ontzorgen u volledig.</p>
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="tel:123456789" className="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-200">📞 Bel ons direct</a>
-        <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-200">💬 WhatsApp</a>
-      </div>
-      <p className="mt-6 text-white/40 text-sm">✦ Vrijblijvend advies • Gratis offerte • Geen verplichtingen</p>
+    <div className="bg-brand-50 border border-brand-100 rounded-2xl p-8 mt-12 text-center">
+      <h2 className="text-3xl font-semibold text-dark-900 mb-4">
+        Klaar voor uw {serviceName.toLowerCase()} in {city}?
+      </h2>
+
+      <p className="text-dark-700 mb-6 max-w-2xl mx-auto leading-relaxed">
+        NexStuc verzorgt complete badkamerrenovaties met hoogwaardige materialen,
+        strakke planning en vakmanschap. Vraag een vrijblijvende offerte aan en
+        ontdek wat wij voor uw badkamer in {city} kunnen betekenen.
+      </p>
+
+      <a
+        href="/contact"
+        className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 px-8 rounded-xl transition-all shadow-md"
+      >
+        Vrijblijvende offerte aanvragen
+      </a>
+
+      <p className="text-sm text-dark-500 mt-3">
+        Binnen 24 uur reactie • Gratis & vrijblijvend
+      </p>
     </div>
   );
 };
