@@ -3,24 +3,41 @@ import { services } from "./data/services";
 import HomePage from "./pages/HomePage";
 import PillarPage from "./pages/PillarPage";
 
-/*
- * NexStuc – Strak vakmanschap voor heel Nederland
- * 
- * Architecture:
- * - Homepage: / (one-page with anchor navigation)
- * - Pillar pages: /stukadoor, /stucwerk, /latexspuiten, etc.
- * - Future: /{service}/{city} for 96 location pages per service
- *
- * Using HashRouter for single-file build compatibility.
- * For production Vercel deployment, switch to BrowserRouter
- * and configure rewrites in vercel.json.
- */
+import StukadoorCityPage from "./pages/stukadoor/[citySlug]";
+import StucwerkCityPage from "./pages/stucwerk/[citySlug]";
+import SpackspuitenCityPage from "./pages/spackspuiten/[citySlug]";
+import SchilderwerkCityPage from "./pages/schilderwerk/[citySlug]";
+import BetonCireCityPage from "./pages/beton-cire/[citySlug]";
+import BadkamerrenovatieCityPage from "./pages/badkamerrenovatie/[citySlug]";
+import LatexspuitenCityPage from "./pages/latexspuiten/[citySlug]";
+
+const ServiceLocationTemplateRouterWrapper = ({ service }) => {
+  switch (service.slug) {
+    case "stukadoor":
+      return <StukadoorCityPage />;
+    case "stucwerk":
+      return <StucwerkCityPage />;
+    case "spackspuiten":
+      return <SpackspuitenCityPage />;
+    case "schilderwerk":
+      return <SchilderwerkCityPage />;
+    case "beton-cire":
+      return <BetonCireCityPage />;
+    case "badkamerrenovatie":
+      return <BadkamerrenovatieCityPage />;
+    case "latexspuiten":
+      return <LatexspuitenCityPage />;
+    default:
+      return <div>Not Found</div>;
+  }
+};
 
 export default function App() {
   return (
     <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+
         {services.map((service) => (
           <Route
             key={service.slug}
@@ -28,14 +45,15 @@ export default function App() {
             element={<PillarPage service={service} />}
           />
         ))}
-        {/*
-          // ============================================================
-          // PROGRAMMATIC SEO: Location page routes
-          // Future route pattern: /{service.slug}/:city
-          // Example: /stukadoor/amsterdam, /stucwerk/rotterdam
-          // These will be generated programmatically for 96 cities
-          // ============================================================
-        */}
+
+        {/* Dynamic location routes */}
+        {services.map((service) => (
+          <Route
+            key={`${service.slug}-city`}
+            path={`/${service.slug}/:citySlug`}
+            element={<ServiceLocationTemplateRouterWrapper service={service} />}
+          />
+        ))}
       </Routes>
     </HashRouter>
   );
