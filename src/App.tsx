@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import React from "react";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { services } from "./data/services";
 import HomePage from "./pages/HomePage";
 import PillarPage from "./pages/PillarPage";
@@ -14,7 +15,7 @@ import LatexspuitenCityPage from "./pages/latexspuiten/[citySlug]";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-// Scroll to top on route change
+// Scroll fix for HashRouter
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   React.useEffect(() => {
@@ -46,7 +47,7 @@ const ServiceLocationTemplateRouterWrapper = ({ service }) => {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop />
       <Header />
 
@@ -71,6 +72,6 @@ export default function App() {
       </Routes>
 
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
