@@ -91,7 +91,9 @@ export default function Header() {
           <a href="#/" onClick={handleLogoClick} className="flex flex-col">
             <span
               className={`text-2xl font-extrabold tracking-tight transition-colors duration-300 ${
-                scrolled ? "text-brand-900" : "text-white"
+                isHomePage
+                ? (scrolled ? "text-brand-900" : "text-white")
+                : "text-brand-900"
               }`}
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
@@ -99,7 +101,9 @@ export default function Header() {
             </span>
             <span
               className={`text-[10px] tracking-widest uppercase transition-colors duration-300 ${
-                scrolled ? "text-dark-700" : "text-white/80"
+                isHomePage
+                ? (scrolled ? "text-dark-700" : "text-white/80")
+                : "text-dark-700"
               }`}
             >
               Strak vakmanschap
@@ -113,7 +117,9 @@ export default function Header() {
                 key={item.sectionId}
                 onClick={() => handleNavClick(item.sectionId)}
                 className={`text-sm font-medium transition-colors duration-200 hover:text-brand-500 bg-transparent border-none cursor-pointer ${
-                  scrolled ? "text-dark-800" : "text-white"
+                  isHomePage
+                  ? (scrolled ? "text-dark-800" : "text-white")
+                  : "text-dark-800"
                 }`}
               >
                 {item.label}
@@ -136,17 +142,23 @@ export default function Header() {
           >
             <span
               className={`block w-6 h-0.5 transition-colors ${
-                scrolled ? "bg-dark-900" : "bg-white"
+                isHomePage
+                ? (scrolled ? "bg-dark-900" : "bg-white")
+                : "bg-dark-900"
               }`}
             />
             <span
               className={`block w-6 h-0.5 transition-colors ${
-                scrolled ? "bg-dark-900" : "bg-white"
+                isHomePage
+                ? (scrolled ? "bg-dark-900" : "bg-white")
+                : "bg-dark-900"
               }`}
             />
             <span
               className={`block w-4 h-0.5 transition-colors ${
-                scrolled ? "bg-dark-900" : "bg-white"
+                isHomePage
+                ? (scrolled ? "bg-dark-900" : "bg-white")
+                : "bg-dark-900"
               }`}
             />
           </button>
