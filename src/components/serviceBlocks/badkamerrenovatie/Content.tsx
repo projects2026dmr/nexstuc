@@ -3,20 +3,56 @@ import React from "react";
 const Content = ({ serviceName, city }: { serviceName: string; city: string }) => {
   return (
     <div className="prose prose-lg max-w-none text-dark-700">
-      <h2 className="text-3xl font-semibold mt-10 mb-4">{serviceName} in {city} – Compleet, luxe en op maat</h2>
-      <p className="mb-4">Op zoek naar een professionele {serviceName.toLowerCase()} in {city}? NexStuc verzorgt complete badkamerrenovaties van A tot Z in {city} en omgeving. Van sloopwerk en sanitair tot tegelwerk, beton ciré, stucwerk en afwerking — wij creëren uw droombadkamer met vakmanschap en oog voor detail.</p>
-      <p className="mb-4">Met hoogwaardige materialen, waterdichte systemen en een doordacht ontwerp realiseren wij badkamers die niet alleen prachtig ogen, maar ook functioneel en duurzaam zijn. Of het nu gaat om een compacte badkamer of een luxe spa-ruimte in {city}.</p>
-      <h3 className="text-2xl font-semibold mt-6 mb-2">Wat omvat onze {serviceName.toLowerCase()} in {city}?</h3>
+      
+      <h2 className="text-3xl font-semibold mt-10 mb-4">
+        {serviceName} in {city} – Luxe, duurzaam en volledig op maat
+      </h2>
+
+      <p className="mb-4">
+        Op zoek naar een hoogwaardige {serviceName.toLowerCase()} in {city}? 
+        NexStuc realiseert complete badkamerrenovaties van A tot Z. 
+        Wij combineren vakmanschap, moderne materialen en waterdichte systemen 
+        om een badkamer te creëren die jarenlang mooi blijft.
+      </p>
+
+      <p className="mb-4">
+        Van sloopwerk en leidingwerk tot tegelwerk, beton ciré, stucwerk en afwerking: 
+        ons team verzorgt elke stap met precisie. 
+        Of u nu een compacte badkamer wilt optimaliseren of een luxe wellnessruimte 
+        wilt creëren in {city}, wij leveren een perfect eindresultaat.
+      </p>
+
+      <h3 className="text-2xl font-semibold mt-6 mb-2">
+        Wat omvat onze {serviceName.toLowerCase()} in {city}?
+      </h3>
+
       <ul className="list-disc ml-6 mb-6 space-y-2">
         <li>Sloop en voorbereiding van de bestaande badkamer</li>
         <li>Installatie van sanitair (douche, bad, toilet, wastafel)</li>
         <li>Wand- en vloertegelwerk of beton ciré afwerking</li>
-        <li>Stucwerk en waterdichting</li>
+        <li>Waterdichting volgens moderne systemen</li>
+        <li>Stucwerk voor wanden en plafonds</li>
         <li>Elektriciteit, verlichting en ventilatie</li>
         <li>Eindafwerking, kitwerk en styling</li>
       </ul>
-      <h3 className="text-2xl font-semibold mt-6 mb-2">Waarom NexStuc voor uw badkamer in {city}?</h3>
-      <p className="mb-4">Wij combineren verschillende specialisaties — stucwerk, beton ciré, tegelwerk en afwerking — in één team. Dat betekent één aanspreekpunt, strakke planning en een perfect eindresultaat. Neem contact op voor een vrijblijvende offerte voor uw {serviceName.toLowerCase()} in {city}.</p>
+
+      <h3 className="text-2xl font-semibold mt-6 mb-2">
+        Waarom kiezen voor NexStuc in {city}?
+      </h3>
+
+      <ul className="list-disc ml-6 mb-6 space-y-2">
+        <li>Één team voor stucwerk, tegelwerk, beton ciré en afwerking</li>
+        <li>Strakke planning en duidelijke communicatie</li>
+        <li>Hoogwaardige materialen en waterdichte systemen</li>
+        <li>Vakmanschap met garantie op alle werkzaamheden</li>
+        <li>Specialist in zowel kleine als luxe badkamers</li>
+      </ul>
+
+      <p className="mb-4">
+        Neem contact op voor een vrijblijvende offerte voor uw 
+        {serviceName.toLowerCase()} in {city}. 
+        Wij denken graag met u mee over indeling, materiaalkeuze en afwerking.
+      </p>
     </div>
   );
 };
