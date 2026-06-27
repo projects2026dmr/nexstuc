@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --color-brand-50: #f0f7ff;
+  --color-brand-100: #e0effe;
+  --color-brand-200: #b9dffd;
+  --color-brand-300: #7cc5fc;
+  --color-brand-400: #36a8f8;
+  --color-brand-500: #0c8ee9;
+  --color-brand-600: #0070c7;
+  --color-brand-700: #0159a1;
+  --color-brand-800: #064c85;
+  --color-brand-900: #0b406e;
+  --color-brand-950: #072849;
+  --color-accent-400: #f59e0b;
+  --color-accent-500: #d97706;
+  --color-dark-900: #0f172a;
+  --color-dark-800: #1e293b;
+  --color-dark-700: #334155;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1e293b;
+}
+
+/* Hamburger menu overlay - ensure full viewport coverage */
+.mobile-menu-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+}
+
+/* Smooth scroll offset for fixed header */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Star rating */
+.star {
+  color: #f59e0b;
+}
