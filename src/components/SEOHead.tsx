@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 
 interface SEOHeadProps {
   title: string;
@@ -8,32 +7,53 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({ title, description, canonical }) => {
-  return (
-    <Helmet>
-      {/* Basic SEO */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
+  // Vite + React 19 uyumlu head injection
+  React.useEffect(() => {
+    document.title = title;
 
-      {/* Canonical */}
-      <link rel="canonical" href={canonical} />
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", description);
 
-      {/* OpenGraph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonical} />
-      <meta property="og:type" content="website" />
+    const canonicalLink =
+      document.querySelector('link[rel="canonical"]') ||
+      document.createElement("link");
+    canonicalLink.setAttribute("rel", "canonical");
+    canonicalLink.setAttribute("href", canonical);
+    document.head.appendChild(canonicalLink);
 
-      {/* Twitter */}
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:card" content="summary_large_image" />
+    // OG tags
+    const setOG = (property: string, content: string) => {
+      let tag = document.querySelector(`meta[property="${property}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute("property", property);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    };
 
-      {/* General */}
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="robots" content="index, follow" />
-    </Helmet>
-  );
+    setOG("og:title", title);
+    setOG("og:description", description);
+    setOG("og:url", canonical);
+    setOG("og:type", "website");
+
+    // Twitter tags
+    const setTwitter = (name: string, content: string) => {
+      let tag = document.querySelector(`meta[name="${name}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute("name", name);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    };
+
+    setTwitter("twitter:title", title);
+    setTwitter("twitter:description", description);
+    setTwitter("twitter:card", "summary_large_image");
+  }, [title, description, canonical]);
+
+  return null;
 };
 
 export default SEOHead;
