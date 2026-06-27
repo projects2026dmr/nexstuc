@@ -20,7 +20,7 @@ const ServiceLocationTemplate: React.FC<ServiceLocationTemplateProps> = ({
   schema
 }) => {
   return (
-    <main className="max-w-4xl mx-auto px-4 pt-28 pb-10">
+    <main className="max-w-4xl mx-auto px-4 pt-32 md:pt-28 pb-10">
       {breadcrumbs}
 
       <h1 className="text-4xl font-bold mb-6">
