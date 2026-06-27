@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { services } from "./data/services";
 import HomePage from "./pages/HomePage";
 import PillarPage from "./pages/PillarPage";
@@ -10,6 +10,18 @@ import SchilderwerkCityPage from "./pages/schilderwerk/[citySlug]";
 import BetonCireCityPage from "./pages/beton-cire/[citySlug]";
 import BadkamerrenovatieCityPage from "./pages/badkamerrenovatie/[citySlug]";
 import LatexspuitenCityPage from "./pages/latexspuiten/[citySlug]";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const ServiceLocationTemplateRouterWrapper = ({ service }) => {
   switch (service.slug) {
@@ -34,7 +46,10 @@ const ServiceLocationTemplateRouterWrapper = ({ service }) => {
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Header />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
 
@@ -46,7 +61,6 @@ export default function App() {
           />
         ))}
 
-        {/* Dynamic location routes */}
         {services.map((service) => (
           <Route
             key={`${service.slug}-city`}
@@ -55,6 +69,8 @@ export default function App() {
           />
         ))}
       </Routes>
-    </HashRouter>
+
+      <Footer />
+    </BrowserRouter>
   );
 }
