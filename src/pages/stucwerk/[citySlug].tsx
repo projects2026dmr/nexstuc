@@ -24,8 +24,8 @@ const Page = () => {
   const serviceSlug = "stucwerk";
   const city = location.city;
 
-  const metaTitle = `${serviceName} in ${city}`;
-  const metaDescription = `NexStuc verzorgt professioneel ${serviceName.toLowerCase()} in ${city} en omgeving.`;
+  const metaTitle = `Strak ${serviceName.toLowerCase()} in ${city} | NexStuc stukadoor specialist`;
+  const metaDescription = `Professioneel ${serviceName.toLowerCase()} in ${city} door NexStuc. Strakke wanden, plafonds en afwerking met garantie. Vraag een vrijblijvende offerte aan in ${city}.`;
 
   return (
     <>
