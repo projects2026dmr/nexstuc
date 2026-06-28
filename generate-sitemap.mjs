@@ -69,4 +69,3 @@ ${allUrls
 fs.writeFileSync(path.join(__dirname, "public", "sitemap.xml"), xml);
 
 console.log("Sitemap generated successfully!");
-
