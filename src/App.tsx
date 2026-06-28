@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { services } from "./data/services";
 import HomePage from "./pages/HomePage";
 import PillarPage from "./pages/PillarPage";
@@ -47,7 +47,7 @@ const ServiceLocationTemplateRouterWrapper = ({ service }) => {
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop />
       <Header />
 
@@ -72,6 +72,6 @@ export default function App() {
       </Routes>
 
       <Footer />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
