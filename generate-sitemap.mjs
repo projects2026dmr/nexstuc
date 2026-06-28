@@ -5,23 +5,20 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// TS dosyasını string olarak oku ve array'i çıkar
+// TS dosyasını string olarak oku ve array'i çıkar (regex YOK)
 function readTSArray(filePath) {
   const content = fs.readFileSync(filePath, "utf8");
 
-  // Bozulamaz regex
-  const regex = /=\s*(
+  const start = content.indexOf("[");
+  const end = content.lastIndexOf("]");
 
-\[[\s\S]*?\]
-
-);/;
-  const match = content.match(regex);
-
-  if (!match) {
+  if (start === -1 || end === -1) {
     throw new Error("TS array parse edilemedi: " + filePath);
   }
 
-  return eval(match[1]); // güvenli çünkü sadece array var
+  const arrayString = content.substring(start, end + 1);
+
+  return eval(arrayString); // güvenli çünkü sadece array var
 }
 
 const locationsPath = path.join(__dirname, "src", "data", "locations.ts");
