@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node generate-sitemap.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -14,10 +15,6 @@
     "react-dom": "19.2.6",
     "react-router-dom": "^7.18.0",
     "tailwind-merge": "3.4.0"
-  },
-  "scripts": {
-    "prebuild": "node generate-sitemap.mjs",
-    "build": "vite build"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.17",
