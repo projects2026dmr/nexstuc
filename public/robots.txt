@@ -1,28 +1,4 @@
 User-agent: *
 Allow: /
 
-# Googlebot
-User-agent: Googlebot
-Allow: /
-
-# Bingbot
-User-agent: Bingbot
-Allow: /
-
-# ChatGPT / OpenAI
-User-agent: GPTBot
-Allow: /
-
-# Anthropic Claude
-User-agent: ClaudeBot
-Allow: /
-
-# Perplexity
-User-agent: PerplexityBot
-Allow: /
-
-# Google AI Search
-User-agent: Google-Extended
-Allow: /
-
-Sitemap: https://nexstuc.vercel.app/sitemap.xml
+Sitemap: https://nexstuc.vercel.app/api/sitemap
