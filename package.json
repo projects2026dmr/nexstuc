@@ -15,6 +15,10 @@
     "react-router-dom": "^7.18.0",
     "tailwind-merge": "3.4.0"
   },
+    "scripts": {
+    "prebuild": "node generate-sitemap.cjs",
+    "build": "vite build"
+  },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.17",
     "@types/node": "22.19.17",
