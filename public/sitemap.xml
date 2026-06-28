@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://nexstuc.vercel.app/</loc>
-    <priority>1.0</priority>
-  </url>
+  <sitemap>
+    <loc>https://nexstuc.vercel.app/sitemap-main.xml</loc>
+  </sitemap>
 
-  <url>
-    <loc>https://nexstuc.vercel.app/stukadoor</loc>
-  </url>
+  <sitemap>
+    <loc>https://nexstuc.vercel.app/sitemap-stukadoor.xml</loc>
+  </sitemap>
 
-  <url>
-    <loc>https://nexstuc.vercel.app/stucwerk</loc>
-  </url>
+  <sitemap>
+    <loc>https://nexstuc.vercel.app/sitemap-stucwerk.xml</loc>
+  </sitemap>
 
-  <url>
-    <loc>https://nexstuc.vercel.app/latexspuiten</loc>
-  </url>
+  <sitemap>
+    <loc>https://nexstuc.vercel.app/sitemap-latexspuiten.xml</loc>
+  </sitemap>
 
-  <url>
-    <loc>https://nexstuc.vercel.app/spackspuiten</loc>
-  </url>
+  <sitemap>
+    <loc>https://nexstuc.vercel.app/sitemap-spackspuiten.xml</loc>
+  </sitemap>
 
-  <url>
-    <loc>https://nexstuc.vercel.app/schilderwerk</loc>
-  </url>
+  <sitemap>
+    <loc>https://nexstuc.vercel.app/sitemap-schilderwerk.xml</loc>
+  </sitemap>
 
-  <url>
-    <loc>https://nexstuc.vercel.app/beton-cire</loc>
-  </url>
+  <sitemap>
+    <loc>https://nexstuc.vercel.app/sitemap-beton-cire.xml</loc>
+  </sitemap>
 
-  <url>
-    <loc>https://nexstuc.vercel.app/badkamerrenovatie</loc>
-  </url>
+  <sitemap>
+    <loc>https://nexstuc.vercel.app/sitemap-badkamerrenovatie.xml</loc>
+  </sitemap>
 
-</urlset>
+</sitemapindex>
