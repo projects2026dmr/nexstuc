@@ -9,12 +9,13 @@ const __dirname = path.dirname(__filename);
 function readTSArray(filePath) {
   const content = fs.readFileSync(filePath, "utf8");
 
-  // export const LOCATIONS = [...]
-  const match = content.match(/=\s*(
+  // Bölünemez regex
+  const regex = new RegExp("=\\s*(\
 
-\[[\s\S]*?\]
+\[[\\s\\S]*?\\]
 
-);/);
+);");
+  const match = content.match(regex);
 
   if (!match) {
     throw new Error("TS array parse edilemedi: " + filePath);
