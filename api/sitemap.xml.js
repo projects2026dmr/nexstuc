@@ -1,7 +1,7 @@
-import { LOCATIONS } from "../src/data/locations";
-import { SERVICES } from "../src/data/services";
+const { LOCATIONS } = require("../src/data/locations");
+const { SERVICES } = require("../src/data/services");
 
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
   const baseUrl = "https://nexstuc.vercel.app";
 
   const staticUrls = [
@@ -41,4 +41,4 @@ ${allUrls
 
   res.setHeader("Content-Type", "application/xml");
   res.status(200).send(xml);
-}
+};
