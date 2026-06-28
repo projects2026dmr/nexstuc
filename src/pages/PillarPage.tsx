@@ -59,8 +59,6 @@ export default function PillarPage({ service }: PillarPageProps) {
         serviceSlug={service.slug}
       />
 
-      <Header />
-
       {/* Hero */}
       <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 bg-gradient-to-br from-dark-900 via-brand-950 to-dark-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -332,8 +330,6 @@ export default function PillarPage({ service }: PillarPageProps) {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
