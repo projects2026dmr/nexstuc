@@ -9,12 +9,12 @@ const __dirname = path.dirname(__filename);
 function readTSArray(filePath) {
   const content = fs.readFileSync(filePath, "utf8");
 
-  // Bölünemez regex
-  const regex = new RegExp("=\\s*(\
+  // Bozulamaz regex
+  const regex = /=\s*(
 
-\[[\\s\\S]*?\\]
+\[[\s\S]*?\]
 
-);");
+);/;
   const match = content.match(regex);
 
   if (!match) {
