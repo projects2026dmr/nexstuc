@@ -14,7 +14,7 @@ const CTA = ({ serviceName, city }: { serviceName: string; city: string }) => {
       </p>
 
       <a
-        href="/contact"
+        href="https://nexstuc.vercel.app/"
         className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 px-8 rounded-xl transition-all shadow-md"
       >
         Vrijblijvende offerte aanvragen
