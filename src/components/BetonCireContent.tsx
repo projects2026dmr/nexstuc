@@ -114,15 +114,19 @@ export default function BetonCireContent() {
 
       <h2 className="text-3xl font-semibold mt-10 mb-4">Beton ciré in alle steden</h2>
       <p className="mb-4">NexStuc is specialist in beton ciré in heel Nederland. Bekijk onze diensten per stad:</p>
-      <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6">
-        {LOCATIONS.map((loc) => (
-          <li key={loc.slug}>
-            <a href={`#/beton-cire/${loc.slug}`} className="text-brand-600 hover:text-brand-800 underline transition-colors">
-              Beton ciré in {loc.city}
-            </a>
-          </li>
-        ))}
-      </ul>
+<ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6">
+  {LOCATIONS.map((loc) => (
+    <li key={loc.slug}>
+      <a
+        href={`/beton-cire/${loc.slug}`}
+        className="text-brand-600 hover:text-brand-800 underline transition-colors"
+      >
+        Beton ciré in {loc.city}
+      </a>
+    </li>
+  ))}
+</ul>
+
     </div>
   );
 }
