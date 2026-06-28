@@ -39,7 +39,7 @@ const staticUrls = [
   "/spackspuiten",
   "/schilderwerk",
   "/beton-cire",
-  "/badkamerrenovatie",
+  "/badkamerrenovatie"
 ];
 
 const locationUrls = [];
