@@ -21,14 +21,12 @@ export default function HomePage() {
         "NexStuc – Professionele stukadoor voor heel Nederland. Stucwerk, latexspuiten, spackspuiten, schilderwerk, beton ciré en badkamerrenovatie. Vraag een vrijblijvende offerte aan."
       );
     }
-    // Scroll to top when arriving at homepage
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
       <HomeStructuredData />
-      <Header />
       <main>
         <HeroSection />
         <OverOnsSection />
@@ -38,7 +36,6 @@ export default function HomePage() {
         <ReviewsSection />
         <ContactSection />
       </main>
-      <Footer />
     </>
   );
 }
