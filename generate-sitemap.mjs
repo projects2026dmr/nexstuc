@@ -5,18 +5,18 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// TS dosyasını string olarak oku ve array'i çıkar (regex YOK)
+// TS dosyasındaki gerçek array'i bulur
 function readTSArray(filePath) {
   const content = fs.readFileSync(filePath, "utf8");
 
-  const start = content.indexOf("[");
-  const end = content.lastIndexOf("]");
+  const start = content.indexOf("=[");
+  const end = content.indexOf("];", start);
 
   if (start === -1 || end === -1) {
     throw new Error("TS array parse edilemedi: " + filePath);
   }
 
-  const arrayString = content.substring(start, end + 1);
+  const arrayString = content.substring(start + 1, end + 1); // =[ ... ]; → sadece [ ... ]
 
   return eval(arrayString); // güvenli çünkü sadece array var
 }
